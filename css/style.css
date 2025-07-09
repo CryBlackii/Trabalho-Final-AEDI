@@ -1,0 +1,114 @@
+
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box; 
+}
+
+.gameBoard{
+    width: 100%;
+    height: 500px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(#191919, aliceblue);
+}
+
+.cactus{
+    position: absolute;
+    bottom: 0;
+    width: 60px;
+    animation: cactusAnimation 1.5s infinite linear;
+}
+
+.dino{
+    width: 150px;
+    position: absolute;
+    bottom: 0;
+
+}
+
+.pulo{
+    animation: pulo 500ms ease-out;
+}
+
+.nuvens{
+    position: absolute;
+    width: 500px;
+    animation: nuvensAnimation 20s infinite linear;
+}
+
+.chao{
+    position: absolute;
+    bottom: 10px;
+}
+
+.restart-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Permite clicar no botão mesmo com o container cobrindo a tela */
+}
+
+.restart-btn {
+    display: none;
+    padding: 10px 20px;
+    background-color: #191919;
+    color: aliceblue;
+    border: 2px solid aliceblue;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    pointer-events: auto;
+    position: relative;
+    z-index: 1000;
+}
+
+.restart-btn:hover {
+    background-color: aliceblue;
+    color: #191919;
+}
+
+@keyframes cactusAnimation{
+    from{
+        right: 0;
+    } to {
+        right:100%;
+    }
+}
+
+@keyframes pulo{
+    0%{
+        bottom: 0;
+    }
+
+    40%{
+        bottom: 180px;
+    }
+
+    50%{
+        bottom: 180px;
+    }
+
+    60%{
+        bottom: 180px;
+    }
+
+    100%{
+        bottom:0;
+    }
+}
+
+@keyframes nuvensAnimation{
+    from{
+        right: -500px;
+    } to {
+        right: 100%;
+    }
+}
